@@ -11,7 +11,7 @@ class MainFrame(wx.Frame):
 
         self.panel = wx.Panel(self)
 
-        self.figure = matplotlib.figure.Figure()
+        self.figure = matplotlib.figure.Figure(dpi=self.GetDPI().GetWidth())
         self.axes = self.figure.add_subplot(111)
         self.canvas = matplotlib.backends.backend_wxagg.FigureCanvasWxAgg(self.panel, -1, self.figure)
 
@@ -29,7 +29,7 @@ class MainFrame(wx.Frame):
 
         self.panel.SetSizer(sizer)
 
-        self.SetSize(self.FromDIP((800, 600)))
+        self.SetSize(self.FromDIP((1200, 900)))
         self.update_plot(frequency_slider.GetValue())
 
 
