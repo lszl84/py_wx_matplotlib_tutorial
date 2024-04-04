@@ -1,7 +1,7 @@
 import wx
 import numpy as np
 import matplotlib.figure
-import matplotlib.backends.backend_wxagg
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg, NavigationToolbar2WxAgg
 
 from utils import ensure_hdpi
 
@@ -13,7 +13,10 @@ class MainFrame(wx.Frame):
 
         self.figure = matplotlib.figure.Figure(dpi=self.GetDPI().GetWidth())
         self.axes = self.figure.add_subplot(111)
-        self.canvas = matplotlib.backends.backend_wxagg.FigureCanvasWxAgg(self.panel, -1, self.figure)
+        self.canvas = FigureCanvasWxAgg(self.panel, -1, self.figure)
+
+        self.toolbar = NavigationToolbar2WxAgg(self.canvas)
+        self.toolbar.Realize()
 
         frequency_label = wx.StaticText(self.panel, label="Frequency")
 
@@ -21,7 +24,8 @@ class MainFrame(wx.Frame):
         frequency_slider.Bind(wx.EVT_SLIDER, self.on_frequency_change)
         
         sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.Add(self.canvas, 1, wx.EXPAND | wx.ALL, self.FromDIP(5))
+        sizer.Add(self.canvas, 1, wx.EXPAND)
+        sizer.Add(self.toolbar, 0, wx.EXPAND)
         sizer.AddSpacer(self.FromDIP(10))
         sizer.Add(frequency_label, 0, wx.ALIGN_CENTER)
         sizer.Add(frequency_slider, 0, wx.EXPAND | wx.ALL, self.FromDIP(5))
