@@ -55,6 +55,7 @@ class MainFrame(wx.Frame):
         self.axes.legend(loc='upper right')
         
         self.canvas.draw()
+        self.canvas.Refresh() # Needed for Linux
 
 
     def on_frequency_change(self, event):
