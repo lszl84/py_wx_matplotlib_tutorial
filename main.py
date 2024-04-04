@@ -3,18 +3,21 @@ import numpy as np
 import matplotlib.figure
 import matplotlib.backends.backend_wxagg
 
+from utils import ensure_hdpi
 
 class MainFrame(wx.Frame):
     def __init__(self):
         super().__init__(None, title="Sine Wave Plot in wxPython")
 
+        self.panel = wx.Panel(self)
+
         self.figure = matplotlib.figure.Figure()
         self.axes = self.figure.add_subplot(111)
-        self.canvas = matplotlib.backends.backend_wxagg.FigureCanvasWxAgg(self, -1, self.figure)
+        self.canvas = matplotlib.backends.backend_wxagg.FigureCanvasWxAgg(self.panel, -1, self.figure)
 
-        frequency_label = wx.StaticText(self, label="Frequency")
+        frequency_label = wx.StaticText(self.panel, label="Frequency")
 
-        frequency_slider = wx.Slider(self, value=2, minValue=1, maxValue=20, style=wx.SL_HORIZONTAL | wx.SL_LABELS)
+        frequency_slider = wx.Slider(self.panel, value=2, minValue=1, maxValue=20, style=wx.SL_HORIZONTAL | wx.SL_LABELS)
         frequency_slider.Bind(wx.EVT_SLIDER, self.on_frequency_change)
         
         sizer = wx.BoxSizer(wx.VERTICAL)
@@ -24,7 +27,7 @@ class MainFrame(wx.Frame):
         sizer.Add(frequency_slider, 0, wx.EXPAND | wx.ALL, self.FromDIP(5))
         sizer.AddSpacer(self.FromDIP(10))
 
-        self.SetSizer(sizer)
+        self.panel.SetSizer(sizer)
 
         self.SetSize(self.FromDIP((800, 600)))
         self.update_plot(frequency_slider.GetValue())
@@ -57,6 +60,8 @@ class MainFrame(wx.Frame):
 
 if __name__ == "__main__":
     app = wx.App(False)
+    ensure_hdpi()
+
     frame = MainFrame()
     frame.Show()
     app.MainLoop()
