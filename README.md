@@ -12,7 +12,7 @@ Your support means the world to me!
 
 ## Project Overview
 
-Full Tutorial: (see YouTube above)
+Full Tutorial: [https://www.youtube.com/watch?v=vk7Olevww9A](https://www.youtube.com/watch?v=vk7Olevww9A)
 
 In this tutorial we embed a matplotlib chart in a wxPython application, allowing the user to control the chart's parameters with native UI controls.
 
