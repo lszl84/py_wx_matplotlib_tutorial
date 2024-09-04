@@ -1,24 +1,11 @@
-## Author
 
-👋 Hi, I'm Luke!
-
-Welcome to my GitHub repository. I'm passionate about making programming accessible and enjoyable for everyone. Whether you're just starting out or an experienced developer, you'll find valuable insights in my tutorials and courses.
-
-🌟 **Support my work:**
-- 🌐 Visit [my website](https://www.lukesdevtutorials.com) for more resources.
-- ▶️ Subscribe to [my YouTube channel](https://www.youtube.com/@lukesdevtutorials) for free tutorials and courses.
-
-Your support means the world to me!
-
-## Project Overview
+In this tutorial we embed a matplotlib chart in a wxPython application, allowing the user to control the chart's parameters with native UI controls.
 
 [![Video](/output.gif)](https://www.youtube.com/watch?v=vk7Olevww9A)
 
 Full Tutorial: [https://www.youtube.com/watch?v=vk7Olevww9A](https://www.youtube.com/watch?v=vk7Olevww9A)
 
-In this tutorial we embed a matplotlib chart in a wxPython application, allowing the user to control the chart's parameters with native UI controls.
-
-## System Requirements
+### System Requirements
 
 To get started with this project, ensure you have the following tools and libraries:
 
@@ -27,7 +14,7 @@ To get started with this project, ensure you have the following tools and librar
 - **matplotlib**
 - **numpy**
 
-## Running
+### Running
 
 To run the project, simply execute the `main.py` script:
 
@@ -37,6 +24,6 @@ python main.py
 
 Remember to install the required libraries first. I recommend using a virtual environment to manage your dependencies.
 
-## License
-
-MIT License. Can be used in closed-source commercial products.
+---
+Check out the blog for more! [www.lukesdevtutorials.com](https://www.lukesdevtutorials.com)
+---
