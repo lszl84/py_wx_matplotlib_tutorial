@@ -12,7 +12,7 @@ Your support means the world to me!
 
 ## Project Overview
 
-![Screenshot](/screenshot.png)
+[![Video](/output.gif)](https://www.youtube.com/watch?v=vk7Olevww9A)
 
 Full Tutorial: [https://www.youtube.com/watch?v=vk7Olevww9A](https://www.youtube.com/watch?v=vk7Olevww9A)
 
